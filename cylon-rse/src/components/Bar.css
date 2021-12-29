@@ -1,0 +1,63 @@
+.bar_background {
+  grid-area: bar;
+  background-color: #15202b;
+}
+
+.bar {
+  background-color: #2a99ed;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bar_menu_open {
+  background-color: #2a99ed;
+  border-radius: 20px 20px 20px 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bar_menu {
+  position: relative;
+  left: 1%;
+  height: 70%;
+  width: 2%;
+  cursor: pointer;
+}
+
+.bar_welcome {
+  font-size:calc(5px + 1.5vw);
+  font-family:'Lucida Sans';
+  color: #ffffff;
+  position: absolute;
+  left: 5%;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.bar_title {
+  font-size:calc(10px + 2vw);
+  font-family:'Lucida Sans';
+  color: #ffffff;
+  position: absolute;
+  right: 7%;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.bar_logo {
+  position: relative;
+  left: 93%;
+  height: 90%;
+  width: 3.8%;
+}

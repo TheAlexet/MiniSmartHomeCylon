@@ -1,0 +1,57 @@
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.team_group_background {
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    top: 5%;
+    left: 34%;
+    background-color: #2a99ed;
+    border-radius: 20px;
+}
+
+.team_group {
+    position: absolute;
+    height: 95%;
+    width: 94%;
+    top: 2.5%;
+    left: 3%;
+    background-color: #15202b;
+    border-radius: 20px;
+}
+
+.team_text {
+    text-align: center;
+    font-size:calc(10px + 1.5vw);
+    font-family:'Lucida Sans';
+    color: #ffffff;
+    position: relative;
+    top: 10%;
+    margin-top: 10%;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.robot_image_left {
+    position: absolute;
+    height: 60%;
+    width: 20%;
+    top: 20%;
+    left: 6%;
+    transform: rotate(-20deg);
+}
+
+.robot_image_right {
+    position: absolute;
+    height: 60%;
+    width: 20%;
+    top: 20%;
+    left: 72%;
+    transform: rotate(20deg);
+}

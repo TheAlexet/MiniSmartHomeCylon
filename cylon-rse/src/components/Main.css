@@ -1,0 +1,22 @@
+.main_background {
+  grid-area: main;
+  background-color: #15202b;
+  padding: 1% 0% 1% 0%;
+}
+
+.main_background_2 {
+  background-color: #2a99ed;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  background-color: #15202b;
+  border-radius: 20px;
+  position: relative;
+  top: 2%;
+  left: 1%;
+  height: 96%;
+  width: 98%;
+}

@@ -10,7 +10,7 @@
     left: 34%;
 }
 
-.robot_button_1 {
+.button_1_on {
     position: absolute;
     height: 10%;
     width: 10%;
@@ -21,9 +21,67 @@
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 255, 0);
+    z-index: 2;
 }
 
-.robot_button_2 {
+.button_1_off {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 15%;
+    left: 20%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+    z-index: 2;
+}
+
+.button_1_intensity {
+    position: absolute;
+    height: 5%;
+    width: 10%;
+    top: 24%;
+    left: 20%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2a99ed;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.button_intensity_left {
+    position: absolute;
+    width: 30%;
+}
+
+.button_intensity_middle {
+    position: absolute;
+    left: 30%;
+    width: 40%;
+}
+
+.button_intensity_right {
+    position: absolute;
+    left: 70%;
+    width: 30%;
+}
+
+.button_2_on {
     position: absolute;
     height: 10%;
     width: 10%;
@@ -34,9 +92,50 @@
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 255, 0);
+    z-index: 2;
 }
 
-.robot_button_3 {
+.button_2_off {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 60%;
+    left: 15%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+    z-index: 2;
+}
+
+.button_2_intensity {
+    position: absolute;
+    height: 5%;
+    width: 10%;
+    top: 69%;
+    left: 15%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2a99ed;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.button_3_on {
     position: absolute;
     height: 10%;
     width: 10%;
@@ -47,9 +146,28 @@
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 255, 0);
 }
 
-.robot_button_4 {
+.button_3_off {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 15%;
+    left: 68%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+}
+
+.button_4_on {
     position: absolute;
     height: 10%;
     width: 10%;
@@ -60,9 +178,28 @@
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 255, 0);
 }
 
-.robot_button_text {
+.button_4_off {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 60%;
+    left: 73%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+}
+
+.button_text {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -76,7 +213,37 @@
     user-select: none; /* Standard */
 }
 
-.robot_response {
+.lights_intensity_text {
+    position: absolute;
+    width: 100%;
+    margin-top: -10%;
+    text-align: center;
+    font-size:calc(10px + 1vw);
+    font-family:'Lucida Sans';
+    color: #ffffff;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.lights_intensity_text_2 {
+    position: absolute;
+    width: 100%;
+    margin-top: -20%;
+    text-align: center;
+    font-size:calc(10px + 1vw);
+    font-family:'Lucida Sans';
+    color: #ffffff;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.response {
     position: absolute;
     top: 90%;
     width: 100%;

@@ -1,5 +1,5 @@
 const initialState = {
-    screen: "robot",
+    screen: "house",
     menuOpen: false
 }
 

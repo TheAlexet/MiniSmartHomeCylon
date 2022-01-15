@@ -8,67 +8,101 @@ var robot = Cylon.robot({
   },
 
   devices : {
-    redLed: { driver: "led", pin: 11},
-    blueLed: { driver: "led", pin: 13},
-    buzzer: { driver: "direct-pin", pin: 7},
-    buzzerLed: { driver: "led", pin: 10},
+    blueLeds: { driver: "led", pin: 6},
+    yellowLeds: { driver: "led", pin: 5},
+    multicolorRedLed: { driver: 'led', pin: 11 },
+    multicolorGreenLed: { driver: 'led', pin: 10 },
+    multicolorBlueLed: { driver: 'led', pin: 9 },
+    buzzer: { driver: "direct-pin", pin: 2},
+    buzzerLed: { driver: "led", pin: 13},
+    motor: { driver: "motor", pin: 3},
   },
 }).start();
 
-router.get("/redLightsOn", function (req, res, next) {
-  robot.devices.redLed.turnOn();
-  robot.devices.redLed.brightness(125);
-  res.send("Red lights switched on");
-});
-
-router.get("/redLightsOff", function (req, res, next) {
-  robot.devices.redLed.turnOff();
-  res.send("Red lights switched off");
-});
-
-router.get("/redLightsRaiseIntensity", function (req, res, next) {
-  robot.devices.redLed.brightness(robot.devices.redLed.currentBrightness() === 225 ? 0 : robot.devices.redLed.currentBrightness() + 25);
-  res.send("Intensity raised");
-});
-
-router.get("/redLightsLowerIntensity", function (req, res, next) {
-  robot.devices.redLed.brightness(robot.devices.redLed.currentBrightness() === 0 ? 225 : robot.devices.redLed.currentBrightness() - 25);
-  res.send("Intensity lowered");
-});
-
 router.get("/blueLightsOn", function (req, res, next) {
-  robot.devices.blueLed.turnOn();
-  robot.devices.blueLed.brightness(125);
-  res.send("Blue lights switched on");
+  robot.devices.blueLeds.turnOn();
+  robot.devices.blueLeds.brightness(125);
+  res.send("Luces azules encendidas");
 });
 
 router.get("/blueLightsOff", function (req, res, next) {
-  robot.devices.blueLed.turnOff();
-  res.send("Blue lights switched off");
+  robot.devices.blueLeds.turnOff();
+  res.send("Luces azules apagadas");
 });
 
 router.get("/blueLightsRaiseIntensity", function (req, res, next) {
-  robot.devices.blueLed.brightness(robot.devices.blueLed.currentBrightness() === 225 ? 0 : robot.devices.blueLed.currentBrightness() + 25);
-  console.log(robot.devices.blueLed.currentBrightness())
-  res.send("Intensity raised");
+  robot.devices.blueLeds.brightness(robot.devices.blueLeds.currentBrightness() === 225 ? 0 : robot.devices.blueLeds.currentBrightness() + 25);
+  res.send("Intensidad azul aumentada");
 });
 
 router.get("/blueLightsLowerIntensity", function (req, res, next) {
-  robot.devices.blueLed.brightness(robot.devices.blueLed.currentBrightness() === 0 ? 225 : robot.devices.blueLed.currentBrightness() - 25);
-  console.log(robot.devices.blueLed.currentBrightness())
-  res.send("Intensity lowered");
+  robot.devices.blueLeds.brightness(robot.devices.blueLeds.currentBrightness() === 0 ? 225 : robot.devices.blueLeds.currentBrightness() - 25);
+  res.send("Intensidad azul disminuida");
+});
+
+router.get("/yellowLightsOn", function (req, res, next) {
+  robot.devices.yellowLeds.turnOn();
+  robot.devices.yellowLeds.brightness(125);
+  res.send("Luces amarillas encendidas");
+});
+
+router.get("/yellowLightsOff", function (req, res, next) {
+  robot.devices.yellowLeds.turnOff();
+  res.send("Luces amarillas apagadas");
+});
+
+router.get("/yellowLightsRaiseIntensity", function (req, res, next) {
+  robot.devices.yellowLeds.brightness(robot.devices.yellowLeds.currentBrightness() === 225 ? 0 : robot.devices.yellowLeds.currentBrightness() + 25);
+  res.send("Intensidad amarilla aumentada");
+});
+
+router.get("/yellowLightsLowerIntensity", function (req, res, next) {
+  robot.devices.yellowLeds.brightness(robot.devices.yellowLeds.currentBrightness() === 0 ? 225 : robot.devices.yellowLeds.currentBrightness() - 25);
+  res.send("Intensidad amarilla disminuida");
+});
+
+var multicolorLightOn = false;
+
+router.get("/multicolorLightOn", function (req, res, next) {
+  multicolorLightOn = true;
+  every((1).second(), function() {
+    if(multicolorLightOn) {
+      robot.devices.multicolorRedLed.brightness(Math.random() * 255)
+      robot.devices.multicolorGreenLed.brightness(Math.random() * 255)
+      robot.devices.multicolorBlueLed.brightness(Math.random() * 255)
+    }
+  });
+  res.send("Luz multicolor encendida");
+});
+
+router.get("/multicolorLightOff", function (req, res, next) {
+  multicolorLightOn = false;
+  robot.devices.multicolorRedLed.turnOff()
+  robot.devices.multicolorGreenLed.turnOff()
+  robot.devices.multicolorBlueLed.turnOff()
+  res.send("Luz multicolor apagada");
 });
 
 router.get("/buzzerOn", function (req, res, next) {
   robot.devices.buzzer.digitalWrite(1);
   robot.devices.buzzerLed.turnOn();
-  res.send("Music turned on");
+  res.send("Música encendida");
 });
 
 router.get("/buzzerOff", function (req, res, next) {
   robot.devices.buzzer.digitalWrite(0);
   robot.devices.buzzerLed.turnOff();
-  res.send("Music turned off");
+  res.send("Música apagada");
+});
+
+router.get("/motorOn", function (req, res, next) {
+  robot.devices.motor.turnOn();
+  res.send("Motor encendido");
+});
+
+router.get("/motorOff", function (req, res, next) {
+  robot.devices.motor.turnOff();
+  res.send("Motor apagado");
 });
 
 module.exports = router;

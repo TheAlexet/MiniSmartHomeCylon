@@ -1,8 +1,8 @@
-.robot {
+.house {
  
 }
 
-.robot_image {
+.house_image {
     position: absolute;
     height: 85%;
     width: 30%;
@@ -85,7 +85,7 @@
     position: absolute;
     height: 10%;
     width: 10%;
-    top: 60%;
+    top: 40%;
     left: 15%;
     background-color: #2a99ed;
     display: flex;
@@ -102,7 +102,7 @@
     position: absolute;
     height: 10%;
     width: 10%;
-    top: 60%;
+    top: 40%;
     left: 15%;
     background-color: #2a99ed;
     display: flex;
@@ -119,7 +119,7 @@
     position: absolute;
     height: 5%;
     width: 10%;
-    top: 69%;
+    top: 49%;
     left: 15%;
     background-color: #2a99ed;
     display: flex;
@@ -139,6 +139,38 @@
     position: absolute;
     height: 10%;
     width: 10%;
+    top: 65%;
+    left: 20%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 255, 0);
+}
+
+.button_3_off {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 65%;
+    left: 20%;
+    background-color: #2a99ed;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+}
+
+.button_4_on {
+    position: absolute;
+    height: 10%;
+    width: 10%;
     top: 15%;
     left: 68%;
     background-color: #2a99ed;
@@ -151,7 +183,7 @@
     border-color: rgb(0, 255, 0);
 }
 
-.button_3_off {
+.button_4_off {
     position: absolute;
     height: 10%;
     width: 10%;
@@ -167,11 +199,11 @@
     border-color: red;
 }
 
-.button_4_on {
+.button_5_on {
     position: absolute;
     height: 10%;
     width: 10%;
-    top: 60%;
+    top: 40%;
     left: 73%;
     background-color: #2a99ed;
     display: flex;
@@ -183,11 +215,11 @@
     border-color: rgb(0, 255, 0);
 }
 
-.button_4_off {
+.button_5_off {
     position: absolute;
     height: 10%;
     width: 10%;
-    top: 60%;
+    top: 40%;
     left: 73%;
     background-color: #2a99ed;
     display: flex;
